@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
     flash[:notice] = "已用支付宝完成付款！"
   end
 
-  def pay_with_alipay
+  def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     @order.make_payment!
     @order.set_paymeny_with_method("wechat")
